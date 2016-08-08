@@ -22,6 +22,8 @@ public:
     virtual ~ListaArcos();
     Arco* getCabeza();
     void setCabeza(Arco*);
+    void insertar(Arco*);
+    bool esVacia();
 private:
     Arco* cabeza;
 };

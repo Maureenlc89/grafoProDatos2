@@ -31,9 +31,19 @@ void Grafo::insertarArco(int llaveDestino, int llaveOrigen, double distancia){
         }
         if(llaveDestino == vertices[i]->getPosMatriz()){
             destino=vertices[i];
-        }
-        
+        } 
     }
     Arco* aux= new Arco(destino,origen,distancia);
     adyacencia[llaveOrigen][llaveDestino]=aux;
+}
+
+ListaArcos* Grafo::obtnerAdyacencias(int llave){
+    ListaArcos* listaAdYacencia=new ListaArcos();
+    for(int i=0;i<maxVertice;i++){
+        Arco* aux=adyacencia[llave][i];
+        if(aux!=NULL){
+            listaAdYacencia->insertar(aux);
+        }
+    }
+    return listaAdYacencia;
 }

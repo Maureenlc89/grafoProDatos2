@@ -39,5 +39,6 @@ void Vertice::setPosMatriz(int ppos){
 void Vertice::setSiguiente(Vertice* paux){
     siguiente=paux;
 }
-
-    
+Vertice* Vertice::getSiguiente(){
+    return siguiente;
+}

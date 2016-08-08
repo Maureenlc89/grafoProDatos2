@@ -27,4 +27,19 @@ Arco* ListaArcos::getCabeza(){
 void ListaArcos::setCabeza(Arco* pcabeza){
     cabeza =  pcabeza;
 }
-
+void ListaArcos::insertar(Arco* paux ){
+    if(this->esVacia()){
+        cabeza=paux;   
+    }else{
+        paux->setSiguiente(cabeza);
+        cabeza=paux;
+    }
+}
+bool ListaArcos::esVacia(){
+    
+    if(cabeza == NULL){
+        return true;
+    }else{
+        return false;
+    }
+}

@@ -44,3 +44,19 @@ int TablaHash::funcionHash(string pnombre){
     }
     return (valor % tamanioArreglo);
 }
+int TablaHash::buscarAdyacencias(string pubicacion){
+    Vertice* aux;
+    int posArreglo=funcionHash(pubicacion);
+    aux=ubicaciones[posArreglo]->getCabeza();
+    aux=recorrerListaVertices(aux, pubicacion);
+    int llave=aux->getPosMatriz();
+    return llave;
+    
+}
+Vertice* TablaHash::recorrerListaVertices(Vertice* aux,string pubicacion){
+    if(pubicacion==aux->getNombre()){
+        return aux;
+    }else{
+        recorrerListaVertices(aux->getSiguiente(), pubicacion);
+    }
+}

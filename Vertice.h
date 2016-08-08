@@ -27,10 +27,12 @@ public:
     
     int getPosMatriz();
     Vertice* getSiguiente();
+   
     
     void setSiguiente(Vertice*);
     void setNombre(string);
     void setPosMatriz(int);
+    
     
 private:
     string nombre;

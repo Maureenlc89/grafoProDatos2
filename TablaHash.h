@@ -14,6 +14,7 @@
 #ifndef TABLAHASH_H
 #define TABLAHASH_H
 #include "ListaVertices.h"
+#include "Vertice.h"
  int const tamanioArreglo=13; /// flta sets y gets
 class TablaHash {
 public:
@@ -22,9 +23,11 @@ public:
     virtual ~TablaHash();
     
     ListaVertices*  getUbicaciones();
-    void getUbicaciones(ListaVertices* []);
+    void setUbicaciones(ListaVertices* []);
     void insertarUbicacion(Vertice*);
     int funcionHash(string);
+    int buscarAdyacencias(string);
+     Vertice* recorrerListaVertices(Vertice*,string);
     
 private:
     ListaVertices* ubicaciones[tamanioArreglo];//la mitad el numero primo anterior 

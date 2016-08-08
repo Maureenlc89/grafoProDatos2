@@ -14,6 +14,7 @@
 #include "ListaVertices.h"
 
 ListaVertices::ListaVertices() {
+    setCabeza(NULL);
 }
 
 ListaVertices::ListaVertices(const ListaVertices& orig) {
