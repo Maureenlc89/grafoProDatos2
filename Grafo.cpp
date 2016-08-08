@@ -23,8 +23,17 @@ Vertice* Grafo::insertarVertice(string nombre, int llave){
     
 }
 void Grafo::insertarArco(int llaveDestino, int llaveOrigen, double distancia){
-    for(int i=0;i<sizeof(adyacencia);i++){
+    Vertice* origen;
+    Vertice* destino;
+    for(int i=0;i<sizeof(vertices);i++){
+        if(llaveOrigen == vertices[i]->getPosMatriz()){
+            origen=vertices[i];
+        }
+        if(llaveDestino == vertices[i]->getPosMatriz()){
+            destino=vertices[i];
+        }
         
     }
-    Arco* aux= new Arco();
+    Arco* aux= new Arco(destino,origen,distancia);
+    adyacencia[llaveOrigen][llaveDestino]=aux;
 }
