@@ -13,7 +13,13 @@
 
 #include "Arco.h"
 
-Arco::Arco() {
+Arco::Arco(){
+    
+}
+Arco::Arco(Vertice* llaveDestino, Vertice* llaveOrigen, double distancia) {
+    setDestino(llaveDestino);
+    setOrigen(llaveOrigen);
+    setDistancia(distancia);
 }
 
 Arco::Arco(const Arco& orig) {

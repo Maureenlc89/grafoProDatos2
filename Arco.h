@@ -21,6 +21,7 @@ using namespace std;
 class Arco {
 public:
     Arco();
+    Arco(Vertice*,Vertice*,double);
     Arco(const Arco& orig);
     virtual ~Arco();
     

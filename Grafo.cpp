@@ -22,3 +22,9 @@ Vertice* Grafo::insertarVertice(string nombre, int llave){
      return nuevo;
     
 }
+void Grafo::insertarArco(int llaveDestino, int llaveOrigen, double distancia){
+    for(int i=0;i<sizeof(adyacencia);i++){
+        
+    }
+    Arco* aux= new Arco();
+}

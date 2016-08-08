@@ -3,6 +3,8 @@
 #include "Vertice.h"
 #include <iostream>
 #include "ListaArcos.h"
+#include "Arco.h"
+
 
 using namespace std;
 int const maxVertice =30;
@@ -16,7 +18,7 @@ public:
         //  void insertarAdyacencia();
         ListaArcos* obtnerAdyacencias(int llave);
         Vertice obtenerVertice(int llave);
-        void insertarArco(int llaveDestino,int llaveOrigen, int distancia);
+        void insertarArco(int llaveDestino,int llaveOrigen, double distancia);
         //falta metodo buscar destancia as corta
         int getMaxVertice();
         void setMaxVertice();
