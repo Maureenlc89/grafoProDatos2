@@ -42,3 +42,9 @@ void Vertice::setSiguiente(Vertice* paux){
 Vertice* Vertice::getSiguiente(){
     return siguiente;
 }
+bool Vertice::getVisitado(){
+    return visitado;
+}
+void Vertice::setVisitado(bool pvisitado){
+    visitado=pvisitado;
+}

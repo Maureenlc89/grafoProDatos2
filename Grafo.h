@@ -8,6 +8,8 @@
 
 using namespace std;
 int const maxVertice =30;
+
+ //lista listaMinimos;
 class Grafo {
 public:
 // hacer case con las ubicaciones y laves
@@ -18,11 +20,13 @@ public:
         //  void insertarAdyacencia();
         ListaArcos* obtnerAdyacencias(int llave);
         Vertice obtenerVertice(int llave);
-        void insertarArco(int llaveDestino,int llaveOrigen, double distancia);
-        //falta metodo buscar destancia as corta
+        void insertarArco(int llaveOrigen,int llaveDestino, double distancia);
+        void caminoCorto(Vertice* inicio, Vertice* final,int ubiMatriz, int ubicolumna);
+        void caminoCortoRecursivo(Vertice* inicio, Vertice* final, Arco* ubiActual,int ubiAnterior, int ubiMatriz,int ubiCulumna);
         int getMaxVertice();
         void setMaxVertice();
-        
+        void recorreradyacencias (int pos, Vertice *destino);
+         int  minimo;
         
 
 private:

@@ -27,8 +27,9 @@ public:
     
     int getPosMatriz();
     Vertice* getSiguiente();
-   
+    bool getVisitado();
     
+    void setVisitado(bool);
     void setSiguiente(Vertice*);
     void setNombre(string);
     void setPosMatriz(int);
@@ -38,6 +39,7 @@ private:
     string nombre;
     int posMatriz;
     Vertice* siguiente;
+    bool visitado;
     // lista simple de arcos
 };
 

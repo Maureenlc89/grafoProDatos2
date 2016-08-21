@@ -20,6 +20,7 @@ Arco::Arco(Vertice* llaveDestino, Vertice* llaveOrigen, double distancia) {
     setDestino(llaveDestino);
     setOrigen(llaveOrigen);
     setDistancia(distancia);
+    this->setVisitado(false);
 }
 
 Arco::Arco(const Arco& orig) {
@@ -40,6 +41,12 @@ double Arco::getDistancia(){
 Arco* Arco::getSiguiente(){
     return siguiente;
 }
+bool Arco::getVisitado(){
+    return visitado;
+}
+void Arco::setVisitado(bool pvisitado){
+    visitado=pvisitado;
+}
 void Arco::setDestino(Vertice* pdestino){
     destino=pdestino;
 }
@@ -51,4 +58,11 @@ void Arco::setDistancia(double pdistancia){
 }
 void Arco::setSiguiente(Arco* psiguiente){
     siguiente= psiguiente;
+}
+
+int Arco::getubiAnt(){
+    return ubiAnt;
+}
+void Arco::setubiAnt(int pubiant){
+    ubiAnt=pubiant;
 }

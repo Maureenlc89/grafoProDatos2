@@ -27,7 +27,7 @@ public:
     void insertarUbicacion(Vertice*);
     int funcionHash(string);
     int buscarAdyacencias(string);
-     Vertice* recorrerListaVertices(Vertice*,string);
+    Vertice* recorrerListaVertices(Vertice*,string);
     
 private:
     ListaVertices* ubicaciones[tamanioArreglo];//la mitad el numero primo anterior 

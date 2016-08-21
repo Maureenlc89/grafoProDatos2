@@ -29,7 +29,11 @@ public:
     Vertice* getDestino();
     double getDistancia();
     Arco* getSiguiente();
+    bool getVisitado();
+    int getubiAnt();
     
+    void setubiAnt(int);
+    void setVisitado(bool);
     void setSiguiente(Arco*);
     void setOrigen(Vertice*);
     void setDestino(Vertice*);
@@ -39,6 +43,8 @@ private:
     Vertice* destino;
     double distancia;
     Arco* siguiente; 
+    bool visitado;
+    int ubiAnt;
 };
 
 #endif /* ARCO_H */
