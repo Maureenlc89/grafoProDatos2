@@ -14,6 +14,7 @@
 #include "TablaHash.h"
 
 TablaHash::TablaHash() {
+    
     for(int i=0;i<tamanioArreglo;i++){
         ubicaciones[i]=NULL;
     } 
@@ -27,10 +28,10 @@ TablaHash::~TablaHash() {
 
 void TablaHash::insertarUbicacion(Vertice* pubicacion){
     
-    int posArreglo=funcionHash(pubicacion->getNombre());
+    int posArreglo=funcionHash(pubicacion->getPosMatriz());
     if(ubicaciones[posArreglo]==NULL){
         ListaVertices* nuevo= new ListaVertices();
-        ubicaciones[posArreglo]==nuevo;
+        ubicaciones[posArreglo]=nuevo;
         nuevo->insertar(pubicacion); 
     }else{
         ListaVertices* nuevo= ubicaciones[posArreglo];
@@ -45,7 +46,10 @@ int TablaHash::funcionHash(string pnombre){
     }
     return (valor % tamanioArreglo);
 }
-int TablaHash::buscarAdyacencias(string pubicacion){
+int TablaHash::funcionHash(int pllave){
+    return (pllave % tamanioArreglo);
+}
+int TablaHash::buscarAdyacencias(int pubicacion){
     
     Vertice* aux;
     int posArreglo=funcionHash(pubicacion);
@@ -55,10 +59,16 @@ int TablaHash::buscarAdyacencias(string pubicacion){
     return llave;
     
 }
-Vertice* TablaHash::recorrerListaVertices(Vertice* aux,string pubicacion){
-    if(pubicacion==aux->getNombre()){
+Vertice* TablaHash::recorrerListaVertices(Vertice* aux,int pubicacion){
+    if(pubicacion==aux->getPosMatriz()){
         return aux;
     }else{
         recorrerListaVertices(aux->getSiguiente(), pubicacion);
     }
 }
+
+Vertice* TablaHash:: getCabezaLista(int pllave){
+    Vertice * aux=ubicaciones[pllave]->getCabeza();
+    return aux;
+}
+

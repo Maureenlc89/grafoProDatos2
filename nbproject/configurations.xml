@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Arco.h</itemPath>
+      <itemPath>Gestor.h</itemPath>
       <itemPath>Grafo.h</itemPath>
       <itemPath>ListaArcos.h</itemPath>
       <itemPath>ListaVertices.h</itemPath>
@@ -48,6 +49,8 @@
       <item path="Arco.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Gestor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gestor.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -97,6 +100,8 @@
       <item path="Arco.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Gestor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gestor.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>

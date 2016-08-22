@@ -26,9 +26,11 @@ public:
     void setUbicaciones(ListaVertices* []);
     void insertarUbicacion(Vertice*);
     int funcionHash(string);
-    int buscarAdyacencias(string);
-    Vertice* recorrerListaVertices(Vertice*,string);
+    int funcionHash(int);
+    int buscarAdyacencias(int);
+    Vertice* recorrerListaVertices(Vertice*,int);
     void insertarUbicacionRecursivo();
+    Vertice* getCabezaLista(int);
 private:
     ListaVertices* ubicaciones[tamanioArreglo];//la mitad el numero primo anterior 
 };

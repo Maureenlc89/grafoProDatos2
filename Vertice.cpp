@@ -14,9 +14,10 @@
 #include "Vertice.h"
 
 
-Vertice::Vertice(string pnombre,int pllave) {
+Vertice::Vertice(string pnombre,string pdescripcion,int pllave) {
     setNombre(pnombre);
     setPosMatriz(pllave);
+    setDescripcion(pdescripcion);
 }
 
 Vertice::Vertice(const Vertice& orig) {
@@ -30,6 +31,13 @@ string Vertice:: getNombre(){
 int Vertice::getPosMatriz(){
     return posMatriz;
 }
+string Vertice::getDescripcion(){
+    return descripcion;
+}
+
+void Vertice::setDescripcion(string pdescripcion){
+    descripcion = pdescripcion;
+}
 void Vertice::setNombre(string pnom){
     nombre=pnom;
 }
@@ -42,9 +50,4 @@ void Vertice::setSiguiente(Vertice* paux){
 Vertice* Vertice::getSiguiente(){
     return siguiente;
 }
-bool Vertice::getVisitado(){
-    return visitado;
-}
-void Vertice::setVisitado(bool pvisitado){
-    visitado=pvisitado;
-}
+

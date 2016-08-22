@@ -18,9 +18,9 @@ Grafo::Grafo(const Grafo& orig) {
 Grafo::~Grafo() {
 }
 
-Vertice* Grafo::insertarVertice(string nombre, int llave) {
+Vertice* Grafo::insertarVertice(string nombre,string pdescripcion, int llave) {
 
-    Vertice* nuevo = new Vertice(nombre, llave);
+    Vertice* nuevo = new Vertice(nombre,pdescripcion, llave);
     vertices[llave] = nuevo;
     return nuevo;
 
@@ -115,59 +115,59 @@ Vertice* Grafo::buscarVertice(int llave) {
 //    }
 //}
 
-void Grafo::caminoCorto(int pinicio, int pfinal,int ubiMatriz, int ubicolumna) {
-   //Vertice* ubiActual = inicio;
-    Arco* aux;
-     Vertice* inicio;
-    Vertice* final;
-    inicio = buscarVertice(pinicio);
-    final = buscarVertice(pfinal);
-    int ubiAnt=ubiMatriz;
-    if (adyacencia[inicio->getPosMatriz()][final->getPosMatriz()]!= NULL) {
-        aux = adyacencia[inicio->getPosMatriz()][final->getPosMatriz()];
-        aux->getDistancia();
-    } else {
-        this->caminoCortoRecursivo(inicio, final, aux,ubiAnt, ubiMatriz,ubicolumna);
-    }
-
-}
-
-void Grafo::caminoCortoRecursivo(Vertice* inicio, Vertice* final, Arco* ubiActual,int ubiAnterior, int ubiMatriz,int ubiCulumna) {
-                           
-      //hacer un anterior aux
-    //if(ubiActual != NULL) && ubiActual->getDestino()->getPosMatriz()==final->getPosMatriz() ){
-            ubiActual = adyacencia[ubiMatriz][ubiCulumna];
-            if(ubiActual!=NULL){
-               ubiActual->setubiAnt(ubiAnterior); 
-            }
-            
-        if (ubiCulumna < maxVertice) {
-            if (ubiActual != NULL&&ubiActual->getVisitado()==false) {
-                // guardar en una listasimple arco
-                cout<<"listaVisitados---"<<ubiActual->getOrigen()->getNombre()<<"---destino---"<<ubiActual->getDestino()->getNombre()<<"---distacia---"<<ubiActual->getDistancia()<<endl;
-                ubiActual->setVisitado(true);
-               // ubiActual->getOrigen()->setVisitado(true);
-                if(ubiActual->getDestino()!=inicio){
-                    if(ubiActual->getDestino()==final){
-                        // encontrado=true;
-                        cout<<"ya lo encontre"<<endl;
-                        caminoCorto(inicio,final,inicio->getPosMatriz(),1);
-                    }
-                  caminoCortoRecursivo(inicio, final, ubiActual,ubiActual->getubiAnt(), ubiActual->getDestino()->getPosMatriz(),1);
-                }else{
-                    cout<<"no lo encontre"<<endl;
-                    caminoCortoRecursivo(inicio, final, ubiActual,ubiActual->getubiAnt(),ubiMatriz,ubiCulumna++);
-                }
-            }else{
-            ubiCulumna++;
-            caminoCortoRecursivo(inicio, final, ubiActual,ubiAnterior, ubiMatriz,ubiCulumna);
-            }
-        }else{
-            ubiCulumna=1;
-            
-        caminoCorto(inicio,final,ubiActual->getubiAnt(),ubiCulumna);
-    };
-}
+//void Grafo::caminoCorto(int pinicio, int pfinal,int ubiMatriz, int ubicolumna) {
+//   //Vertice* ubiActual = inicio;
+//    Arco* aux;
+//     Vertice* inicio;
+//    Vertice* final;
+//    inicio = buscarVertice(pinicio);
+//    final = buscarVertice(pfinal);
+//    int ubiAnt=ubiMatriz;
+//    if (adyacencia[inicio->getPosMatriz()][final->getPosMatriz()]!= NULL) {
+//        aux = adyacencia[inicio->getPosMatriz()][final->getPosMatriz()];
+//        aux->getDistancia();
+//    } else {
+//        this->caminoCortoRecursivo(inicio, final, aux,ubiAnt, ubiMatriz,ubicolumna);
+//    }
+//
+//}
+//
+//void Grafo::caminoCortoRecursivo(Vertice* inicio, Vertice* final, Arco* ubiActual,int ubiAnterior, int ubiMatriz,int ubiCulumna) {
+//                           
+//      //hacer un anterior aux
+//    //if(ubiActual != NULL) && ubiActual->getDestino()->getPosMatriz()==final->getPosMatriz() ){
+//            ubiActual = adyacencia[ubiMatriz][ubiCulumna];
+//            if(ubiActual!=NULL){
+//               ubiActual->setubiAnt(ubiAnterior); 
+//            }
+//            
+//        if (ubiCulumna < maxVertice) {
+//            if (ubiActual != NULL&&ubiActual->getVisitado()==false) {
+//                // guardar en una listasimple arco
+//                cout<<"listaVisitados---"<<ubiActual->getOrigen()->getNombre()<<"---destino---"<<ubiActual->getDestino()->getNombre()<<"---distacia---"<<ubiActual->getDistancia()<<endl;
+//                ubiActual->setVisitado(true);
+//               // ubiActual->getOrigen()->setVisitado(true);
+//                if(ubiActual->getDestino()!=inicio){
+//                    if(ubiActual->getDestino()==final){
+//                        // encontrado=true;
+//                        cout<<"ya lo encontre"<<endl;
+//                        caminoCorto(inicio,final,inicio->getPosMatriz(),1);
+//                    }
+//                  caminoCortoRecursivo(inicio, final, ubiActual,ubiActual->getubiAnt(), ubiActual->getDestino()->getPosMatriz(),1);
+//                }else{
+//                    cout<<"no lo encontre"<<endl;
+//                    caminoCortoRecursivo(inicio, final, ubiActual,ubiActual->getubiAnt(),ubiMatriz,ubiCulumna++);
+//                }
+//            }else{
+//            ubiCulumna++;
+//            caminoCortoRecursivo(inicio, final, ubiActual,ubiAnterior, ubiMatriz,ubiCulumna);
+//            }
+//        }else{
+//            ubiCulumna=1;
+//            
+//        caminoCorto(inicio,final,ubiActual->getubiAnt(),ubiCulumna);
+//    };
+//}
 
 // void Grafo::caminoCorto(Vertice* inicio, Vertice* final,int ubiMatriz, int ubicolumna) {
 //     
@@ -186,3 +186,15 @@ void Grafo::caminoCortoRecursivo(Vertice* inicio, Vertice* final, Arco* ubiActua
 //        return false;
 //    }
 // }
+
+void Grafo::imprimirVertices(){
+    cout<<"------------------------------------"<<endl;
+    for(int i=0;i<=maxVertice;i++){
+        if(vertices[i]!=NULL){
+            cout<<i+1<<": "<<vertices[i]->getNombre()<<endl;
+        }
+        
+    }
+    cout<<"------------------------------------"<<endl;
+    cout<<" "<<endl;
+}

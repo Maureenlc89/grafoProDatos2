@@ -19,7 +19,7 @@ using namespace std;
 
 class Vertice {
 public:
-    Vertice(string,int);
+    Vertice(string,string,int);
     Vertice(const Vertice& orig);
     virtual ~Vertice();
     
@@ -28,7 +28,9 @@ public:
     int getPosMatriz();
     Vertice* getSiguiente();
     bool getVisitado();
+    string getDescripcion();
     
+    void setDescripcion(string);
     void setVisitado(bool);
     void setSiguiente(Vertice*);
     void setNombre(string);
@@ -40,6 +42,7 @@ private:
     int posMatriz;
     Vertice* siguiente;
     bool visitado;
+    string descripcion;
     // lista simple de arcos
 };
 

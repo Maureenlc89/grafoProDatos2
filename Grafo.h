@@ -16,7 +16,7 @@ public:
 	Grafo();
 	Grafo(const Grafo& orig);
 	virtual ~Grafo();
-        Vertice* insertarVertice(string nombre,int llave);//el vertice debería tener un lista simple de adyacencias, usar el indice del arreglo de vertices
+        Vertice* insertarVertice(string nombre,string,int llave);//el vertice debería tener un lista simple de adyacencias, usar el indice del arreglo de vertices
         //  void insertarAdyacencia();
         ListaArcos* obtnerAdyacencias(int llave);
         Vertice obtenerVertice(int llave);
@@ -26,8 +26,9 @@ public:
         int getMaxVertice();
         void setMaxVertice();
         void recorreradyacencias (int pos, Vertice *destino);
-         int  minimo;
-         Vertice* buscarVertice(int llave);
+        int  minimo;
+        Vertice* buscarVertice(int llave);
+        void imprimirVertices();
 private:
     
     Arco* adyacencia[maxVertice][maxVertice]; 
