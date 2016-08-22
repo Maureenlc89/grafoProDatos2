@@ -79,16 +79,22 @@ void Gestor::buscarUbicacion(int pllave){
 }
 
 void Gestor::buscarAdyacencias(int pllave){
+    int cont=1;
     pllave=tablaHash->buscarAdyacencias(pllave);
-    ListaArcos* lista=grafo->obtnerAdyacencias(pllave);
+    ListaArcos* lista = grafo->obtnerAdyacencias(pllave);
     Arco* aux=lista->getCabeza();
     cout<<"La ubicacion "<<aux->getOrigen()->getNombre()<<" tiene como adyacencias:"<<endl;
+   
+          while(aux!=NULL){
+            cout<< cont <<". "<<aux->getDestino()->getNombre()<<endl;
+            aux = aux->getSiguiente();
+            cont++;
+            
+          }
+         cout<< " "<< endl;
+     }
     
-    int cont=1;
-    while(aux!=NULL){
-        cout<<cont<<". "<<aux->getDestino()->getNombre()<<endl;
-        aux=aux->getSiguiente();
-        cont++;
-    }
-    
-}
+
+ 
+
+

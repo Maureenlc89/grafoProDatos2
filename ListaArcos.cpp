@@ -14,6 +14,7 @@
 #include "ListaArcos.h"
 
 ListaArcos::ListaArcos() {
+    setCabeza(NULL);
 }
 
 ListaArcos::ListaArcos(const ListaArcos& orig) {

@@ -78,8 +78,8 @@ using namespace std;
 
 #include <cstdlib>
 #include "Gestor.h"
-//#include <iostream>
-//#include <string>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -87,57 +87,50 @@ using namespace std;
  * 
  */
 Gestor * g = new Gestor();
+void mostrarMenu();
+int leerOpcion();
+bool ejecutarAccion(int);
+
 int main(int argc, char** argv) {
      
-    int opc;
+  int opc;
   bool noSalir = true;
  
     do{
-      void mostrarMenu();
-        int leerOpcion();
-        bool ejecutarAccion(int);
-     mostrarMenu();
-        opc =leerOpcion();
-        noSalir =ejecutarAccion(opc);
+        mostrarMenu();
+        opc = leerOpcion();
+        noSalir = ejecutarAccion(opc);
     }while (noSalir);
-    
-    
-        
     return 0;
 }
+
   void mostrarMenu(){
- 
-        
+
         cout<<"1.  Buscar ubicacion"<<endl;
         cout<<"2.  Buscar Adyacencias "<<endl;
         cout<<"3.  Buscar camino"<<endl;
+        cout<<"7.  Salir"<<endl;
         cout<<endl;
         
     }
 int leerOpcion(){
         int opcion;
- 
         cout<<"Seleccione su opciÃ³n: "<<endl;
         cin>>opcion;
         cout<<endl;
- 
         return opcion;
     
 }
 void mostrarMenuLocalidad(){
     cout<< "Escoja la ubicacion : "<<endl;
-    
     cout<<endl;
 }
 bool ejecutarAccion(int popcion){
- 
- 
-        bool noSalir = true;
-        int llaveUbi;
- 
+       bool noSalir = true;    
         switch(popcion){
            
             case 1: //Buscar Ubicacion
+                int llaveUbi;
                 g->imprimirVertices();
                 mostrarMenuLocalidad();
                 cin>>llaveUbi;
@@ -146,11 +139,12 @@ bool ejecutarAccion(int popcion){
                 break;
             
             case 2:// buscar adyacencias
+                int opcion;
                 g->imprimirVertices();
                 mostrarMenuLocalidad();
-                cin>>llaveUbi;
-                g->buscarAdyacencias(llaveUbi-1);
-               
+                cin>>opcion;
+               g->buscarAdyacencias((opcion-1));
+              
                 break;
  
             case 3: //Liberar reservacion

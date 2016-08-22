@@ -38,11 +38,12 @@ public:
     void setOrigen(Vertice*);
     void setDestino(Vertice*);
     void setDistancia(double);
+   Arco* siguiente; 
 private:
     Vertice* origen;
     Vertice* destino;
     double distancia;
-    Arco* siguiente; 
+ 
     bool visitado;
     int ubiAnt;
 };
