@@ -19,6 +19,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Arco.cpp</itemPath>
+      <itemPath>Gestor.cpp</itemPath>
       <itemPath>Grafo.cpp</itemPath>
       <itemPath>ListaArcos.cpp</itemPath>
       <itemPath>ListaVertices.cpp</itemPath>
@@ -45,6 +46,8 @@
       <item path="Arco.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Arco.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gestor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -92,6 +95,8 @@
       <item path="Arco.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Arco.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gestor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>

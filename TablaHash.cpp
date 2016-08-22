@@ -26,6 +26,7 @@ TablaHash::~TablaHash() {
 }
 
 void TablaHash::insertarUbicacion(Vertice* pubicacion){
+    
     int posArreglo=funcionHash(pubicacion->getNombre());
     if(ubicaciones[posArreglo]==NULL){
         ListaVertices* nuevo= new ListaVertices();
@@ -35,8 +36,8 @@ void TablaHash::insertarUbicacion(Vertice* pubicacion){
         ListaVertices* nuevo= ubicaciones[posArreglo];
          nuevo->insertar(pubicacion);
     }
-    
 }
+
 int TablaHash::funcionHash(string pnombre){
     int valor = 0;
     for (int i = 0; i < pnombre.length(); i++) {
@@ -45,6 +46,7 @@ int TablaHash::funcionHash(string pnombre){
     return (valor % tamanioArreglo);
 }
 int TablaHash::buscarAdyacencias(string pubicacion){
+    
     Vertice* aux;
     int posArreglo=funcionHash(pubicacion);
     aux=ubicaciones[posArreglo]->getCabeza();

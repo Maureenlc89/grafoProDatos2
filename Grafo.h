@@ -21,14 +21,13 @@ public:
         ListaArcos* obtnerAdyacencias(int llave);
         Vertice obtenerVertice(int llave);
         void insertarArco(int llaveOrigen,int llaveDestino, double distancia);
-        void caminoCorto(Vertice* inicio, Vertice* final,int ubiMatriz, int ubicolumna);
+        void caminoCorto(int inicio,int final,int ubiMatriz, int ubicolumna);
         void caminoCortoRecursivo(Vertice* inicio, Vertice* final, Arco* ubiActual,int ubiAnterior, int ubiMatriz,int ubiCulumna);
         int getMaxVertice();
         void setMaxVertice();
         void recorreradyacencias (int pos, Vertice *destino);
          int  minimo;
-        
-
+         Vertice* buscarVertice(int llave);
 private:
     
     Arco* adyacencia[maxVertice][maxVertice]; 

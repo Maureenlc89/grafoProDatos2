@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Arco.o \
+	${OBJECTDIR}/Gestor.o \
 	${OBJECTDIR}/Grafo.o \
 	${OBJECTDIR}/ListaArcos.o \
 	${OBJECTDIR}/ListaVertices.o \
@@ -72,6 +73,11 @@ ${OBJECTDIR}/Arco.o: Arco.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Arco.o Arco.cpp
+
+${OBJECTDIR}/Gestor.o: Gestor.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Gestor.o Gestor.cpp
 
 ${OBJECTDIR}/Grafo.o: Grafo.cpp 
 	${MKDIR} -p ${OBJECTDIR}
